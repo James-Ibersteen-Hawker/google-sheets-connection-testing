@@ -8,6 +8,7 @@ async function loadData() {
     const response = await fetch(ENDPOINT);
     const data = await response.json();
     elem.textContent = JSON.stringify(data, null, 2);
+    elem.insertAdjacentHTML("beforeend", `<img src="${data[0].IMAGES}" />`);
   } catch (err) {
     elem.textContent = `Error: ${err}`;
   }
